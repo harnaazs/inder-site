@@ -5,7 +5,6 @@ import About from './components/About'
 import Timeline from './components/Timeline'
 import Expertise from './components/Expertise'
 import Education from './components/Education'
-import Insights from './components/Insights'
 import Footer from './components/Footer'
 import CursorGlow from './components/CursorGlow'
 import ScrollProgress from './components/ScrollProgress'
@@ -33,8 +32,6 @@ export default function App() {
       <Expertise />
       <Divider />
       <Education />
-      <Divider />
-      <Insights />
       <Divider />
       <Footer />
     </>
