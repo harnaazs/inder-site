@@ -7,6 +7,8 @@ import Expertise from './components/Expertise'
 import Education from './components/Education'
 import Footer from './components/Footer'
 import CursorGlow from './components/CursorGlow'
+import ScrollProgress from './components/ScrollProgress'
+import PageEntrance from './components/PageEntrance'
 
 export default function App() {
   const [isDark, setIsDark] = useState(true)
@@ -17,6 +19,8 @@ export default function App() {
 
   return (
     <>
+      <PageEntrance />
+      <ScrollProgress />
       <CursorGlow />
       <Navigation isDark={isDark} onToggle={() => setIsDark(d => !d)} />
       <Hero />

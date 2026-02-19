@@ -88,7 +88,7 @@ function HighlightCard({ item, index }) {
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ type: 'spring', damping: 20, stiffness: 60, delay: 0.15 * index }}
       whileHover={{ y: -4, borderColor: 'rgba(201,169,110,0.3)' }}
-      className="p-7 bg-bg-card border border-border rounded-2xl transition-colors"
+      className="p-7 glass rounded-2xl transition-all duration-300"
     >
       <div className="text-2xl mb-3">{item.icon}</div>
       <h3 className="text-[0.95rem] font-semibold mb-1.5">{item.title}</h3>

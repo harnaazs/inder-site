@@ -114,7 +114,7 @@ function TimelineItem({ exp, index, isLeft }) {
       <div className={`md:w-1/2 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
         <motion.div
           whileHover={{ y: -3, borderColor: 'rgba(201,169,110,0.25)' }}
-          className="p-6 bg-bg-card border border-border rounded-2xl transition-colors"
+          className="p-6 glass rounded-2xl transition-all duration-300"
         >
           <div className="font-serif text-[0.8rem] text-gold font-semibold mb-2">{exp.year}</div>
           <div className="text-[1rem] font-semibold leading-snug mb-1">{exp.role}</div>
