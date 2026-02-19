@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,10 +9,16 @@ import Footer from './components/Footer'
 import CursorGlow from './components/CursorGlow'
 
 export default function App() {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    document.body.classList.toggle('light', !isDark)
+  }, [isDark])
+
   return (
     <>
       <CursorGlow />
-      <Navigation />
+      <Navigation isDark={isDark} onToggle={() => setIsDark(d => !d)} />
       <Hero />
       <Divider />
       <About />

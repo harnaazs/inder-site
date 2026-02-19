@@ -47,6 +47,31 @@ body {
   color: var(--color-text-primary);
 }
 
+/* ── Light mode ── */
+body.light {
+  --color-bg: #faf9f6;
+  --color-bg-secondary: #f0eeea;
+  --color-bg-card: rgba(0, 0, 0, 0.03);
+  --color-bg-card-hover: rgba(0, 0, 0, 0.06);
+
+  --color-gold: #9e7c3c;
+  --color-gold-light: #b89554;
+  --color-gold-dark: #7a5e2b;
+  --color-teal: #1a6b7d;
+  --color-teal-light: #2a8fa7;
+
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #5a5a5a;
+  --color-text-muted: #9a9a9a;
+
+  --color-border: rgba(0, 0, 0, 0.09);
+  --color-border-gold: rgba(158, 124, 60, 0.25);
+}
+
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
