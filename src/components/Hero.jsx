@@ -64,7 +64,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-[clamp(0.85rem,1.5vw,1rem)] text-text-secondary font-medium tracking-wide mb-1"
+          className="text-[clamp(1.05rem,2vw,1.35rem)] text-text-secondary font-light tracking-wide mb-2"
         >
           Executive Director, Global Head of Commercial Data &amp; Digital Innovation
         </motion.p>
@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-gold/70 font-medium text-sm mb-10"
+          className="text-gold/80 font-medium text-[clamp(0.85rem,1.5vw,1.05rem)] mb-10"
         >
           Kite Pharma (Gilead) · New York City
         </motion.p>
