@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: 'spring', damping: 15, stiffness: 80, delay: 0.2 }}
-          className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-10 relative"
+          className="w-44 h-44 md:w-56 md:h-56 mx-auto mb-6 relative"
         >
           <div
             className="absolute inset-[-3px] rounded-full animate-spin-slow"
@@ -59,52 +59,33 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        {/* Title under photo */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-5 py-1.5 border border-border-gold rounded-full text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold bg-gold/5 mb-8"
+          className="text-[clamp(0.85rem,1.5vw,1rem)] text-text-secondary font-medium tracking-wide mb-1"
         >
-          <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
-          Kite Pharma — A Gilead Company
-        </motion.div>
+          Executive Director, Global Head of Commercial Data &amp; Digital Innovation
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="text-gold/70 font-medium text-sm mb-10"
+        >
+          Kite Pharma (Gilead) · New York City
+        </motion.p>
 
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', damping: 20, stiffness: 60, delay: 0.5 }}
-          className="font-serif text-[clamp(3rem,7vw,6rem)] font-semibold leading-[1.05] mb-6 bg-gradient-to-r from-text-primary via-gold-light to-text-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
+          transition={{ type: 'spring', damping: 20, stiffness: 60, delay: 0.6 }}
+          className="font-serif text-[clamp(3.5rem,9vw,7.5rem)] font-semibold leading-[1.05] mb-6 bg-gradient-to-r from-text-primary via-gold-light to-text-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
         >
           Inder Kochar
         </motion.h1>
-
-        {/* Title */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
-          className="text-[clamp(0.95rem,2vw,1.25rem)] text-text-secondary font-light tracking-wide mb-1"
-        >
-          Executive Director, Global Head of
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="text-[clamp(0.95rem,2vw,1.25rem)] text-text-secondary font-light tracking-wide mb-3"
-        >
-          Commercial Data &amp; Digital Innovation
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-          className="text-gold font-medium text-sm"
-        >
-          Kite Pharma · New York City
-        </motion.p>
       </motion.div>
 
       {/* Scroll indicator */}

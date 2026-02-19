@@ -29,7 +29,7 @@ export default function Navigation() {
           : 'py-5 px-8 bg-transparent'
       }`}
     >
-      <span className="font-serif text-xl font-semibold text-gold tracking-wide">
+      <span className="font-serif text-3xl font-semibold text-gold tracking-wide">
         IK
       </span>
 

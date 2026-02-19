@@ -23,14 +23,6 @@
   --color-border-gold: rgba(201, 169, 110, 0.2);
 }
 
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-}
-
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
