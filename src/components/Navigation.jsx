@@ -118,14 +118,14 @@ export default function Navigation({ isDark, onToggle }) {
               </motion.a>
             ))}
             <motion.a
-              href="mailto:hey@ikochar.com"
+              href="mailto:inder@ikochar.com"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.3 }}
               className="text-sm text-gold mt-4"
             >
-              hey@ikochar.com
+              inder@ikochar.com
             </motion.a>
           </motion.div>
         )}

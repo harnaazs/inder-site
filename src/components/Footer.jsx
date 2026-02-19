@@ -28,7 +28,7 @@ export default function Footer() {
             </motion.a>
 
             <motion.a
-              href="mailto:hey@ikochar.com"
+              href="mailto:inder@ikochar.com"
               whileHover={{ y: -3, boxShadow: '0 8px 35px rgba(201,169,110,0.15)' }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-8 py-3.5 border border-gold/40 text-gold font-semibold text-[0.85rem] tracking-wide rounded-full hover:border-gold transition-all"
@@ -36,7 +36,7 @@ export default function Footer() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
               </svg>
-              hey@ikochar.com
+              inder@ikochar.com
             </motion.a>
           </div>
         </SectionReveal>
