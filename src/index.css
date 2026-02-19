@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-bg: #060610;
+  --color-bg-secondary: #0a0a1a;
+  --color-bg-card: rgba(255, 255, 255, 0.025);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.055);
+
+  --color-gold: #c9a96e;
+  --color-gold-light: #e4cc9c;
+  --color-gold-dark: #a08244;
+  --color-teal: #3a8fa7;
+  --color-teal-light: #5bbcd5;
+
+  --color-text-primary: #f0ede6;
+  --color-text-secondary: rgba(240, 237, 230, 0.55);
+  --color-text-muted: rgba(240, 237, 230, 0.3);
+
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-gold: rgba(201, 169, 110, 0.2);
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-dark) var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 3px; }
+
+::selection {
+  background: rgba(201, 169, 110, 0.3);
+  color: var(--color-text-primary);
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 6s ease-in-out infinite;
+}

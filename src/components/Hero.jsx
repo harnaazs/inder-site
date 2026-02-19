@@ -1,0 +1,127 @@
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
+
+export default function Hero() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100])
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+
+  return (
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden px-6">
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute w-[800px] h-[800px] rounded-full -top-52 -right-52"
+          style={{ background: 'radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%)' }}
+          animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0], scale: [1, 1.05, 0.95, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute w-[600px] h-[600px] rounded-full -bottom-32 -left-32"
+          style={{ background: 'radial-gradient(circle, rgba(58,143,167,0.05) 0%, transparent 70%)' }}
+          animate={{ x: [0, -20, 30, 0], y: [0, 20, -30, 0], scale: [1, 0.95, 1.05, 1] }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {[20, 50, 80].map((left) => (
+          <div
+            key={left}
+            className="absolute top-0 bottom-0 w-px opacity-30"
+            style={{
+              left: `${left}%`,
+              background: 'linear-gradient(to bottom, transparent, rgba(201,169,110,0.15), transparent)',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <motion.div style={{ y, opacity }} className="relative z-10 text-center max-w-4xl">
+        {/* Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: 'spring', damping: 15, stiffness: 80, delay: 0.2 }}
+          className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-10 relative"
+        >
+          <div
+            className="absolute inset-[-3px] rounded-full animate-spin-slow"
+            style={{ background: 'conic-gradient(from 0deg, #c9a96e, #3a8fa7, #a08244, #c9a96e)' }}
+          />
+          <img
+            src="/inder.jpeg"
+            alt="Inder Kochar"
+            className="w-full h-full rounded-full object-cover relative z-10 border-[3px] border-bg"
+          />
+        </motion.div>
+
+        {/* Label */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-5 py-1.5 border border-border-gold rounded-full text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-gold bg-gold/5 mb-8"
+        >
+          <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
+          Kite Pharma — A Gilead Company
+        </motion.div>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', damping: 20, stiffness: 60, delay: 0.5 }}
+          className="font-serif text-[clamp(3rem,7vw,6rem)] font-semibold leading-[1.05] mb-6 bg-gradient-to-r from-text-primary via-gold-light to-text-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
+        >
+          Inder Kochar
+        </motion.h1>
+
+        {/* Title */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="text-[clamp(0.95rem,2vw,1.25rem)] text-text-secondary font-light tracking-wide mb-1"
+        >
+          Executive Director, Global Head of
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="text-[clamp(0.95rem,2vw,1.25rem)] text-text-secondary font-light tracking-wide mb-3"
+        >
+          Commercial Data &amp; Digital Innovation
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="text-gold font-medium text-sm"
+        >
+          Kite Pharma · New York City
+        </motion.p>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+      >
+        <span className="text-text-muted text-[0.6rem] uppercase tracking-[0.2em]">Scroll</span>
+        <motion.div
+          className="w-px h-8 bg-gradient-to-b from-gold to-transparent"
+          animate={{ scaleY: [0, 1, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ transformOrigin: 'top' }}
+        />
+      </motion.div>
+    </section>
+  )
+}
