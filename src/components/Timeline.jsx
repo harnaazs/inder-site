@@ -105,7 +105,7 @@ function TimelineItem({ exp, index, isLeft }) {
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.06 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
       className={`relative flex items-start md:items-center ${
         isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
       } pl-14 md:pl-0`}
@@ -122,7 +122,7 @@ function TimelineItem({ exp, index, isLeft }) {
       <motion.div
         initial={{ scale: 0 }}
         animate={inView ? { scale: 1 } : {}}
-        transition={{ duration: 0.3, ease: 'easeOut', delay: index * 0.06 + 0.1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 + 0.1 }}
         className="absolute left-5 md:left-1/2 top-7 md:top-1/2 w-3 h-3 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-bg border-2 border-gold z-10 hover:bg-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.4)] transition-all"
       />
 

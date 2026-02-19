@@ -50,7 +50,7 @@ function EduCard({ school, index }) {
       ref={ref}
       initial={{ opacity: 0, x: school.direction === 'left' ? -30 : 30 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
       className="p-9 glass rounded-2xl"
     >
       <h3 className="font-serif text-[1.35rem] font-semibold mb-1">{school.degree}</h3>

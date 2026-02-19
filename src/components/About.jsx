@@ -86,7 +86,7 @@ function HighlightCard({ item, index }) {
       ref={ref}
       initial={{ opacity: 0, x: 40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 * index }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 * index }}
       className="p-7 glass rounded-2xl"
     >
       <div className="text-2xl mb-3">{item.icon}</div>
