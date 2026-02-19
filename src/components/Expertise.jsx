@@ -64,11 +64,10 @@ function ExpertiseCard({ item, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ type: 'spring', damping: 25, stiffness: 60, delay: index * 0.08 }}
-      whileHover={{ y: -6, borderColor: 'rgba(201,169,110,0.25)' }}
-      className="group relative p-8 glass rounded-2xl overflow-hidden transition-all duration-300"
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.07 }}
+      className="group relative p-8 glass rounded-2xl overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="font-serif text-5xl font-semibold text-gold/50 leading-none mb-4">

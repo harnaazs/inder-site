@@ -2,33 +2,17 @@ import { motion } from 'motion/react'
 import { useInView } from 'react-intersection-observer'
 
 export default function SectionReveal({ children, className = '', delay = 0, direction = 'up' }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1, rootMargin: '0px 0px -60px 0px' })
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
-      x: direction === 'left' ? 50 : direction === 'right' ? -50 : 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-    },
-  }
+  const y = direction === 'up' ? 25 : direction === 'down' ? -25 : 0
+  const x = direction === 'left' ? 25 : direction === 'right' ? -25 : 0
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={{
-        type: 'spring',
-        damping: 25,
-        stiffness: 60,
-        delay,
-      }}
+      initial={{ opacity: 0, y, x }}
+      animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
     >
       {children}

@@ -103,35 +103,29 @@ function TimelineItem({ exp, index, isLeft }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ type: 'spring', damping: 25, stiffness: 60, delay: index * 0.08 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.06 }}
       className={`relative flex items-start md:items-center ${
         isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
       } pl-14 md:pl-0`}
     >
-      {/* Card side */}
       <div className={`md:w-1/2 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-        <motion.div
-          whileHover={{ y: -3, borderColor: 'rgba(201,169,110,0.25)' }}
-          className="p-6 glass rounded-2xl transition-all duration-300"
-        >
+        <div className="p-6 glass rounded-2xl">
           <div className="font-serif text-[0.8rem] text-gold font-semibold mb-2">{exp.year}</div>
           <div className="text-[1rem] font-semibold leading-snug mb-1">{exp.role}</div>
           <div className="text-[0.82rem] text-teal-light font-medium mb-2">{exp.org}</div>
           <div className="text-[0.8rem] text-text-secondary leading-relaxed">{exp.desc}</div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Dot */}
       <motion.div
         initial={{ scale: 0 }}
         animate={inView ? { scale: 1 } : {}}
-        transition={{ type: 'spring', damping: 10, stiffness: 100, delay: index * 0.08 + 0.1 }}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: index * 0.06 + 0.1 }}
         className="absolute left-5 md:left-1/2 top-7 md:top-1/2 w-3 h-3 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-bg border-2 border-gold z-10 hover:bg-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.4)] transition-all"
       />
 
-      {/* Empty side for desktop layout */}
       <div className="hidden md:block md:w-1/2" />
     </motion.div>
   )

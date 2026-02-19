@@ -48,11 +48,10 @@ function EduCard({ school, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: school.direction === 'left' ? -50 : 50 }}
+      initial={{ opacity: 0, x: school.direction === 'left' ? -30 : 30 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ type: 'spring', damping: 20, stiffness: 60, delay: index * 0.15 }}
-      whileHover={{ y: -4, borderColor: 'rgba(201,169,110,0.25)' }}
-      className="p-9 glass rounded-2xl transition-all duration-300"
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+      className="p-9 glass rounded-2xl"
     >
       <h3 className="font-serif text-[1.35rem] font-semibold mb-1">{school.degree}</h3>
       <p className="text-gold font-medium text-[0.9rem] mb-3">{school.school}</p>

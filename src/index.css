@@ -75,36 +75,38 @@ body {
 /* ── Liquid Glass Cards ── */
 .glass {
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(201, 169, 110, 0.2);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px) translateZ(0);
+  border-color: rgba(201, 169, 110, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 body.light .glass {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 body.light .glass:hover {
   background: rgba(255, 255, 255, 0.75);
   border-color: rgba(158, 124, 60, 0.2);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
 }
 
 @keyframes spin-slow {
@@ -122,4 +124,26 @@ body.light .glass:hover {
 
 .animate-shimmer {
   animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(30px, -30px, 0) scale(1.05); }
+  66% { transform: translate3d(-20px, 20px, 0) scale(0.95); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(-20px, 20px, 0) scale(0.95); }
+  66% { transform: translate3d(30px, -30px, 0) scale(1.05); }
+}
+
+.animate-float-1 {
+  animation: float-1 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-2 {
+  animation: float-2 25s ease-in-out infinite;
+  will-change: transform;
 }

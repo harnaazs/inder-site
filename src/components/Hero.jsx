@@ -13,19 +13,14 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute w-[800px] h-[800px] rounded-full -top-52 -right-52"
+        <div
+          className="absolute w-[800px] h-[800px] rounded-full -top-52 -right-52 animate-float-1"
           style={{ background: 'radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%)' }}
-          animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0], scale: [1, 1.05, 0.95, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
-        <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full -bottom-32 -left-32"
+        <div
+          className="absolute w-[600px] h-[600px] rounded-full -bottom-32 -left-32 animate-float-2"
           style={{ background: 'radial-gradient(circle, rgba(58,143,167,0.05) 0%, transparent 70%)' }}
-          animate={{ x: [0, -20, 30, 0], y: [0, 20, -30, 0], scale: [1, 0.95, 1.05, 1] }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
         {[20, 50, 80].map((left) => (
           <div
@@ -43,9 +38,9 @@ export default function Hero() {
       <motion.div style={{ y, opacity }} className="relative z-10 text-center max-w-4xl">
         {/* Photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: 'spring', damping: 15, stiffness: 80, delay: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="w-44 h-44 md:w-56 md:h-56 mx-auto mb-6 relative"
         >
           <div
@@ -81,7 +76,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', damping: 20, stiffness: 60, delay: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
           className="font-serif text-[clamp(3.5rem,9vw,7.5rem)] font-semibold leading-[1.05] mb-6 bg-gradient-to-r from-text-primary via-gold-light to-text-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
         >
           Inder Kochar
